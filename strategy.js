@@ -1,37 +1,35 @@
-// Interface
-class PhysicalAbilities {
+class Abilities {
     action() {
-        console.log('Oh, I can ' + this._name);
+        console.log('I have a ' + this._name);
     }
 }
 
-class Cook extends PhysicalAbilities {
+class Bug extends Abilities {
     constructor() {
         super();
-        this._name = 'cook';
+        this._name = 'bug';
     }
 }
-class WashDishes extends PhysicalAbilities {
+class Fix extends Abilities {
     constructor() {
         super();
-        this._name = 'wash dishes'
+        this._name = 'fix'
     }
 }
 
-// Subject
-class Girl {
+class Programmer {
     constructor() {
       this._abilities = [];
     };
 
-    perfomCook() {
-        const cook = new Cook();
-        this._abilities.push(cook);
+    makeBug() {
+        const bug = new Bug();
+        this._abilities.push(bug);
     }
 
-    perfomWashDishes() {
-        const washDishes = new WashDishes();
-        this._abilities.push(washDishes);
+    makeFix() {
+        const fix = new Fix();
+        this._abilities.push(fix);
     }
 
     getAbilities() {
@@ -40,8 +38,8 @@ class Girl {
 }
 
 (() => {
-    const Alisa = new Girl();
-    Alisa.perfomCook();
-    Alisa.perfomWashDishes();
-    Alisa.getAbilities();
+    const Neo = new Programmer();
+    Neo.makeBug();
+    Neo.makeFix();
+    Neo.getAbilities();
 })();

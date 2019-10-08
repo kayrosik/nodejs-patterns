@@ -1,57 +1,59 @@
-class Feminism {
+class Man {
     constructor() {}
-    static rageAnswer(obj) {
-        obj.rageAnswer();
+    emotion(obj) {
+        obj.emotion(obj);
     }
 }
 
-class Women extends Feminism {
+class Programmer extends Man {
     constructor(name) {
         super();
         this._name = name;
     }
 
-    rageAnswer() {
-        console.log(this._name + ' said: \nWomen are people!')
+    emotion () {
+        console.log(this._name);
     }
 }
 
-class Rage extends Feminism {
-    constructor(woman) {
+class Emotion extends Programmer {
+    constructor(programmer) {
         super();
-        this._woman = woman;
+        this._programmer = programmer;
     }
 
-    rageAnswer() {
-        this._woman.rageAnswer();
+    emotion() {
+        this._programmer.emotion();
     }
 }
 
-class FuckU extends Rage {
-    constructor(woman) {
-        super(woman);
-        this._fuckPhrase = 'Fuck u!'
+class Rage extends Emotion {
+    constructor(programmer) {
+        super(programmer);
+        this._rage = 'Fuck it!'
     }
-    rageAnswer() {
-        super.rageAnswer();
-        console.log(this._fuckPhrase);
+
+    emotion() {
+        super.emotion();
+        console.log(this._rage);
     }
 }
 
-class PeaceOfShit extends Rage {
-    constructor(woman) {
-        super(woman);
-        this._shitPhrase = 'Peace of shit!';
+class Sad extends Emotion {
+    constructor(programmer) {
+        super(programmer);
+        this._sad = '*single tear*';
     }
-    rageAnswer() {
-        super.rageAnswer();
-        console.log(this._shitPhrase);
+
+    emotion() {
+        super.emotion();
+        console.log(this._sad);
     }
 }
 
 (() => {
-    const Masha = new Women('Masha');
-    const fuckU = new FuckU(Masha);
-    const peaceOfShit = new PeaceOfShit(fuckU);
-    Feminism.rageAnswer(peaceOfShit);
+    const Neo = new Programmer('Neo');
+    const rage = new Rage(Neo);
+    const sad = new Sad(rage);
+    sad.emotion();
 })();

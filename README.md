@@ -2,3 +2,4 @@
 - Strategy
 - Observer
 - Decorator
+- Command
